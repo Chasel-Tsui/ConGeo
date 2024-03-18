@@ -1,1 +1,293 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="ConGeo: Robust Cross-view Geo-localization across Ground View Variations">
+  <meta property="og:title" content="ConGeo: Robust Cross-view Geo-localization across Ground View Variations"/>
+  <meta property="og:description" content="ConGeo: Robust Cross-view Geo-localization across Ground View Variations"/>
+  <meta property="og:url" content="https://chasel-tsui.github.io/ConGeo/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="ConGeo: Robust Cross-view Geo-localization across Ground View Variations">
+  <meta name="twitter:description" content="ConGeo: Robust Cross-view Geo-localization across Ground View Variations">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="remote sensing, geo-localization, contrastive learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>ConGeo</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><b>ConGeo:</b> <br>
+                Robust Cross-view Geo-localization across Ground View Variations </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://people.epfl.ch/li.mi?lang=en" target="_blank">Li Mi</a><sup>*</sup>,</span>
+              <span class="author-block">
+              <a href="https://chasel-tsui.github.io/Homepage/" target="_blank">Chang Xu</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://people.epfl.ch/javiera.castillonavarro/?lang=en" target="_blank">Javiera Castillo-Navarro,</a>
+              </span>
+              <span class="author-block">
+                <a href="https://smontariol.github.io/" target="_blank">Syrielle Montariol,</a>
+              </span>
+            </span>
+            </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                        <a href="https://scholar.google.com/citations?user=-aVL-UQAAAAJ&hl=zh-CN" target="_blank">Wen Yang</a>,</span>
+                    <span class="author-block">
+                      <a href="https://atcbosselut.github.io/" target="_blank">Antoine Bosselut</a> and </span>
+                      <span class="author-block">
+                        <a href="https://people.epfl.ch/devis.tuia" target="_blank">Devis Tuia</a></span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">École Polytechnique Fédérale de Lausanne (EPFL)</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                      <p><br></p>
+                      <!--<a href="http://www.epfl.ch/labs/eceo/"><img src="static/images/Fig_ECEO.png" width="180px" margin-left="20px" margin-right="20px" alt="ECEO Logo"/></a></span>-->
+                      <a href="http://epfl.ch"><img src="static/images/Fig_EPFL.png" width="180px"  margin-left="20px"  margin-right="20px" alt="EPFL Logo"/></a></span>
+                      <a href="https://www.whu.edu.cn/"><img src="static/images/Fig_WHU.png" width="80px"  margin-left="20px"  margin-right="20px" alt="WHU Logo"/></a></span>
+                      <!--<a href="https://nlp.epfl.ch/"><img src="static/images/Fig_NLP.png" width="100px"  margin-left="20px" margin-right="20px" alt="NLP Logo"/></a></span> -->
+                  </div>
+
+                  <!---TODO ECEO LOGO, and change logo from red/white invert, put pipeline image-->
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2309.12804.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Pre-Print</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!--<span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>-->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/ConGeo/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <!--<span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Summary</h2>
+        <div class="content has-text-justified">
+      <p>Cross-view geo-localization aims at localizing a ground-level query image by matching it to its corresponding geo-referenced aerial view. In real-world scenarios, the task requires accommodating diverse ground images captured by users with varying orientations and reduced field of views (FoVs). 
+        However, existing learning pipelines are orientation-specific or FoV-specific, demanding separate model training for different ground view variations.</p>
+        <p>
+            To tackle this challenge, we propose <b>ConGeo</b>, a single- and cross-modal <b>Con</b>trastive method for </b>Geo</b>-localization that: enhances robustness and consistency in feature representations to improve a model's invariance to orientation and its resilience to FoV variations, by enforcing proximity between ground view variations of the same location. 
+          </p>
+      <img src="static/images/Fig_Motivation.png" alt="An Overview of ConGeo" width="100%" />
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End paper abstract -->
+
+
+
+<!-- Method -->
+<section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method</h2>
+          <div class="content has-text-justified">
+            <figure class="image mod-figure">
+              <img src="static/images/Fig_Pipeline.png" alt="Modalities overview">
+            </figure>
+            <p>
+            ConGeo's learning pipeline. For feature representation in the left and right boxes, the North-aligned ground image, the transformed ground image, and the aerial view are sent to their respective encoders. Then in the feature space, the single- and cross-modal contrastive learning losses are applied to enforce the proximity of the paired images.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Method -->
+
+<!-- Image carousel -->
+<section class="section hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title">Visualization</h2>
+        </div>  
+        <div id="results-carousel" class="carousel results-carousel">
+         <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Fig_Example1.png" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered">
+            <b>Grounding</b>: ConVQG generations have a better grounding to both image and text compared to the baseline.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Fig_Example2.png" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered">
+            <b>Diversity</b>: ConVQG allows to control the diversity of questions with different text/image inputs.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Fig_Example3.png" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered">
+            <b>Transferability</b>: ConVQG can transfer to unseen dataset and text constraints (fact sentences) without further training.
+          </h2>
+        </div>
+    </div>
+  </div>
+  </div>
+  </section>
+  <!-- End image carousel -->
+
+
+
+
+
+
+<!-- Paper poster 
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{congeo,
+    title={ConGeo: Robust Cross-view Geo-localization across Ground View Variations}, 
+    author={Li Mi and Chang Xu and Javiera Castillo-Navarro and Syrielle Montariol and Wen Yang and Antoine Bosselut and Devis Tuia},
+    year={2024},
+    eprint={},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
+
