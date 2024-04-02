@@ -44,6 +44,9 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script type="text/javascript" async
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full" async>
+  </script>
 </head>
 <body>
 
@@ -193,6 +196,13 @@
             <p>
             ConGeo's learning pipeline. For feature representation in the left and right boxes, the North-aligned ground image, the transformed ground image, and the aerial view are sent to their respective encoders. Then in the feature space, the single- and cross-modal contrastive learning losses are applied to enforce the proximity of the paired images.
             </p>
+            <body>
+                  <div class="formula">
+                      <label><b>Single-modal Contrastive Loss:</b> </label>`\mathcal{L}(q^{\ast}, Q)_{\text{single-q}}=-\log \frac{exp(q^{\ast} \cdot q_{+} / \tau_q)}{\sum_{q_i \in Q} exp(q^{\ast} \cdot q_i / \tau_q)}`<br>
+                      <label><b>Cross-modal Contrastive Loss:</b> </label>`\mathcal{L}(q^{\ast}, R)_{\text{cross}}=-\log \frac{exp(q^{\ast} \cdot r_{+} / \tau_c)}{\sum_{r_i\in R} exp(q^{\ast} \cdot r_i / \tau_c)}`<br>
+                      <label><b>Vanilla Loss:</b> </label>`\mathcal{L}(q, R)_{\text {vanilla}}=-\log \frac{exp(q \cdot r_{+} / \tau_v)}{\sum_{r_i\in R}exp(q \cdot r_i / \tau_v)}`<br>
+                  </div>
+            </body>
           </div>
         </div>
       </div>
