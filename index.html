@@ -157,13 +157,20 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3 has-text-centered">Summary</h2>
         <div class="content has-text-justified">
-      <p>Cross-view geo-localization aims at localizing a ground-level query image by matching it to its corresponding geo-referenced aerial view. In real-world scenarios, the task requires accommodating diverse ground images captured by users with varying orientations and reduced field of views (FoVs). 
-        However, existing learning pipelines are orientation-specific or FoV-specific, demanding separate model training for different ground view variations.</p>
-        <p>
+        <p>Cross-view geo-localization aims at localizing a ground-level query image by matching it to its corresponding geo-referenced aerial view. In real-world scenarios, the task requires accommodating diverse ground images captured by users with varying orientations and reduced field of views (FoVs). 
+        However, existing learning pipelines are orientation-specific or FoV-specific, demanding separate model training for different ground view variations, including the following settings:</p>
+        <ul>
+          <li><b>North-aligned:</b> Ground-view and aerial-view images are aligned to the North.</li>
+          <li><b>Unknown Orientation:</b> Ground-view images are of arbitrary orientations (FoV=360°).</li>
+          <li><b>Limited Field of View:</b> Ground-view images are of arbitrary orientations and limited fielf of views (e.g., FoV=70°, 90°, or 180°).</li>
+        </ul>
+          <div align="center">
+      <img src="static/images/Fig_tasks.PNG" alt="An Overview of ConGeo" width="80%"/>
+          </div>
+          <p>
             To tackle this challenge, we propose <b>ConGeo</b>, a single- and cross-modal <b>Con</b>trastive method for <b>Geo</b>-localization that: enhances robustness and consistency in feature representations to improve a model's invariance to orientation and its resilience to FoV variations, by enforcing proximity between ground view variations of the same location. 
           </p>
-      <img src="static/images/Fig_Motivation.png" alt="An Overview of ConGeo" width="100%" />
-    </div>
+       </div>
       </div>
     </div>
   </div>
@@ -203,7 +210,9 @@
         <!-- <div id="results-carousel" class="carousel results-carousel"> -->
         <div class="item">
           <!-- Your image here -->
-          <img src="static/images/retrieval_results.gif" alt="MY ALT TEXT"/>
+          <div align="center">
+          <img src="static/images/retrieval_results.gif" alt="MY ALT TEXT" width="70%"/>
+          </div>
           <h2 class="subtitle has-text-centered">
             <b>Robust Retrieval Results</b>: ConGeo yields robust retrieval results under ground view variations.
           </h2>
@@ -212,7 +221,9 @@
         <div class="item">
           <p><br></p>
           <!-- Your image here -->
-          <img src="static/images/attention.gif" alt="MY ALT TEXT"/>
+          <div align="center">
+          <img src="static/images/attention.gif" alt="MY ALT TEXT" width="70%"/>
+          </div>
           <h2 class="subtitle has-text-centered">
             <b>Consistent Activation Areas</b>: ConGeo's activation areas are more consistent across ground view variations.
           </h2>
