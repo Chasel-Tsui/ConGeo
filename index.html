@@ -198,7 +198,7 @@
             </p>
             <body>
                   <div class="formula">
-                      <label><b>Single-modal Contrastive Loss (Ground view):</b> </label>&\mathcal{L}(q^{\ast}, Q)_{\text{single-q}}=-\log \frac{exp(q^{\ast} \cdot q_{+} / \tau_q)}{\sum_{q_i \in Q} exp(q^{\ast} \cdot q_i / \tau_q)}& <br>
+                      <label><b>Single-modal Contrastive Loss (Ground view):</b> </label>$\mathcal{L}(q^{\ast}, Q)_{\text{single-q}}=-\log \frac{exp(q^{\ast} \cdot q_{+} / \tau_q)}{\sum_{q_i \in Q} exp(q^{\ast} \cdot q_i / \tau_q)}$ <br>
                       <label><b>Single-modal Contrastive Loss (Aerial view):</b> </label>`\mathcal{L}(r^{\ast}, R)_{\text{single-r}} = -\log \frac{exp(r^{\ast} \cdot r_{+} / \tau_r)}{\sum_{r_i \in R} exp(r^{\ast} \cdot r_i / \tau_r)}`<br>
                       <label><b>Cross-modal Contrastive Loss:</b> </label>`\mathcal{L}(q^{\ast}, R)_{\text{cross}}=-\log \frac{exp(q^{\ast} \cdot r_{+} / \tau_c)}{\sum_{r_i\in R} exp(q^{\ast} \cdot r_i / \tau_c)}`<br>
                       <label><b>Vanilla Loss:</b> </label>`\mathcal{L}(q, R)_{\text {vanilla}}=-\log \frac{exp(q \cdot r_{+} / \tau_v)}{\sum_{r_i\in R}exp(q \cdot r_i / \tau_v)}`<br>
