@@ -44,15 +44,7 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-          tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          inlineMath: [['$','$']]
-          }
-      });
-  </script>
+  <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'],['\\(','\\)']]} }); </script> <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 </head>
 <body>
 
@@ -204,7 +196,7 @@
             </p>
             <body>
                   <div class="formula">
-                      <label><b>Single-modal Contrastive Loss (Ground view):</b> </label>`\mathcal{L}(q^{\ast}, Q)_{\text{single-q}}=-\log \frac{exp(q^{\ast} \cdot q_{+} / \tau_q)}{\sum_{q_i \in Q} exp(q^{\ast} \cdot q_i / \tau_q)}` <br>
+                      <label><b>Single-modal Contrastive Loss (Ground view):</b> </label>`\mathcal{L}(q^{\ast}, Q)_{\text{single-q}}=-\log \frac{exp(q^{\ast} \cdot q_{+} / \tau_q)}{\sum_{q_i \in Q} exp(q^{\ast} \cdot q_i / \tau_q)}`<br>
                       <label><b>Single-modal Contrastive Loss (Aerial view):</b> </label>`\mathcal{L}(r^{\ast}, R)_{\text{single-r}} = -\log \frac{exp(r^{\ast} \cdot r_{+} / \tau_r)}{\sum_{r_i \in R} exp(r^{\ast} \cdot r_i / \tau_r)}`<br>
                       <label><b>Cross-modal Contrastive Loss:</b> </label>`\mathcal{L}(q^{\ast}, R)_{\text{cross}}=-\log \frac{exp(q^{\ast} \cdot r_{+} / \tau_c)}{\sum_{r_i\in R} exp(q^{\ast} \cdot r_i / \tau_c)}`<br>
                       <label><b>Vanilla Loss:</b> </label>`\mathcal{L}(q, R)_{\text {vanilla}}=-\log \frac{exp(q \cdot r_{+} / \tau_v)}{\sum_{r_i\in R}exp(q \cdot r_i / \tau_v)}`<br>
