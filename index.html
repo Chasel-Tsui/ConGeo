@@ -131,6 +131,17 @@
                   </a>
                 </span>
 
+                <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                <div class="content has-text-justified">
+                  <p><br></p>
+                <p>
+                <b>ConGeo enhances base models' robustness to ground view variations by aligning image variations with their original representations.</b> As a generic learning objective for cross-view geo-localization, when integrated into state-of-the-art pipelines, ConGeo significantly boosts the performance of three base models on four geo-localization benchmarks for diverse ground view variations and outperforms competing methods that train separate models for each ground view variation.</p>
+                <div align="center">
+                <img src="static/images/Fig_Summary.PNG" alt="An Overview of ConGeo" width="80%"/>
+                </div> 
+
                 <!-- ArXiv abstract Link -->
                 <!--<span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
@@ -150,13 +161,12 @@
 </section>
 
 
-
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3 has-text-centered">Summary</h2>
+        <h2 class="title is-3 has-text-centered">Introduction</h2>
         <div class="content has-text-justified">
         <p>Cross-view geo-localization aims at localizing a ground-level query image by matching it to its corresponding geo-referenced aerial view. In real-world scenarios, the task requires accommodating diverse ground images captured by users with varying orientations and reduced field of views (FoVs). 
         However, existing learning pipelines are orientation-specific or FoV-specific, demanding separate model training for different ground view variations, including the following settings:</p>
@@ -189,19 +199,14 @@
           <h2 class="title is-3">Method</h2>
           <div class="content has-text-justified">
             <figure class="image mod-figure">
-              <img src="static/images/Fig_Pipeline.png" alt="Modalities overview" width="120%">
+              <img src="static/images/Fig_Pipeline1.png" alt="Modalities overview" width="120%">
             </figure>
             <p>
-            ConGeo's learning pipeline. For feature representation in the left and right boxes, the North-aligned ground image, the transformed ground image, and the aerial view are sent to their respective encoders. Then in the feature space, the single- and cross-modal contrastive learning losses are applied to enforce the proximity of the paired images.
+            ConGeo's learning pipeline. For feature representation in the left and right boxes, the North-aligned ground image, the transformed ground image, and the aerial view are sent to their respective encoders. Then in the feature space, the single- and cross-modal contrastive learning losses are applied to enforce the proximity of the paired images. The proposed training objectives contains four losses:
             </p>
-            <body>
-                  <div class="formula">
-                      <label><b>Single-modal Contrastive Loss (Ground view):</b> </label>`\mathcal{L}(q^{\ast}, Q)_{\text{single-q}}=-\log \frac{exp(q^{\ast} \cdot q_{+} / \tau_q)}{\sum_{q_i \in Q} exp(q^{\ast} \cdot q_i / \tau_q)}`<br>
-                      <label><b>Single-modal Contrastive Loss (Aerial view):</b> </label>`\mathcal{L}(r^{\ast}, R)_{\text{single-r}} = -\log \frac{exp(r^{\ast} \cdot r_{+} / \tau_r)}{\sum_{r_i \in R} exp(r^{\ast} \cdot r_i / \tau_r)}`<br>
-                      <label><b>Cross-modal Contrastive Loss:</b> </label>`\mathcal{L}(q^{\ast}, R)_{\text{cross}}=-\log \frac{exp(q^{\ast} \cdot r_{+} / \tau_c)}{\sum_{r_i\in R} exp(q^{\ast} \cdot r_i / \tau_c)}`<br>
-                      <label><b>Vanilla Loss:</b> </label>`\mathcal{L}(q, R)_{\text {vanilla}}=-\log \frac{exp(q \cdot r_{+} / \tau_v)}{\sum_{r_i\in R}exp(q \cdot r_i / \tau_v)}`<br>
-                  </div>
-            </body>
+            <div align="center">
+            <img src="static/images/Fig_Equations.png" alt="An Overview of ConGeo" width="80%"/>
+            </div>
           </div>
         </div>
       </div>
@@ -212,31 +217,100 @@
 <!-- Image carousel -->
 <section class="section hero is-small is-light">
     <div class="hero-body">
-      <div class="container">
+      <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <h2 class="title">Visualization</h2>
-        </div>  
-        <!-- <div id="results-carousel" class="carousel results-carousel"> -->
+          <h2 class="title">Results</h2>
+          <p><br></p>
+        </div>
+
+        <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+          <p>
+            Experiments are designed on four cross-view geolocalization benchmarks: CVUSA, CVACT, VIGOR and University-1652 for three different settings and unseen variations. 
+        </p>
+        </div>
+        </div>
+        </div>
+
+
         <div class="item">
-          <!-- Your image here -->
-          <div align="center">
+        <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+        <h4 class="subtitle">
+            <b>Robustness across different settings</b>
+          </h4>
+        <p>
+            ConGeo significantly improves base models' performance on unknown orientation setting and limited FoV setting, while maintains competitive performance on the North-aligned setting. Using a single model, ConGeo outperforms SOTA methods with training specific models for different settings. 
+        </p>
+        </div>
+        </div>
+        </div>
+
+        <p><br></p>
+
+        <div align="center">
+          <img src="static/images/Fig_RFoVs.png" alt="MY ALT TEXT" width="30%"/>
+        </div>
+        <p><br></p>
+        <div align="center">
           <img src="static/images/retrieval_results.gif" alt="MY ALT TEXT" width="70%"/>
-          </div>
-          <h2 class="subtitle has-text-centered">
-            <b>Robust Retrieval Results</b>: ConGeo yields robust retrieval results under ground view variations.
-          </h2>
+        </div>
+        <p><br></p>
         </div>
 
         <div class="item">
+        <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+        <h4 class="subtitle">
+            <b>Orientation Invariance</b>
+          </h4>
+        <p>
+            We perform orientation invariance analysis to showcase models’ vulnerabilities to orientation shifts and visualize activation maps to investigate the models’ focus. 
+        </p>
+        </div>
+        </div>
+        </div>
+
+        <p><br></p>
+        <div align="center">
+          <img src="static/images/Fig_ROrientation.png" alt="MY ALT TEXT" width="45%"/>
+        </div>
+
           <p><br></p>
           <!-- Your image here -->
           <div align="center">
           <img src="static/images/attention.gif" alt="MY ALT TEXT" width="70%"/>
           </div>
-          <h2 class="subtitle has-text-centered">
-            <b>Consistent Activation Areas</b>: ConGeo's activation areas are more consistent across ground view variations.
-          </h2>
+
+        <p><br></p>
         </div> 
+
+
+
+        <div class="item">
+        <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+        <h4 class="subtitle">
+            <b>Generalization ability on unseen ground view variations</b>
+          </h4>
+        <p>
+            Comparison on unseen ground view variations (e.g., Random FoVs, Random Zooming, Gaussian Noise, and Motion Blur) between ConGeo and baselines on the CVUSA dataset.
+        </p>
+        </div>
+        </div>
+        </div>
+
+        <p><br></p>
+        <div align="center">
+          <img src="static/images/Fig_RUnseen.png" alt="MY ALT TEXT" width="90%"/>
+        </div>
+
+        <p><br></p>
+
     </div>
   </div>
   </div>
@@ -262,13 +336,11 @@ End paper poster -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{congeo,
-    title={ConGeo: Robust Cross-view Geo-localization across Ground View Variations}, 
-    author={Li Mi and Chang Xu and Javiera Castillo-Navarro and Syrielle Montariol and Wen Yang and Antoine Bosselut and Devis Tuia},
-    year={2024},
-    eprint={2403.12702},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+      <pre><code>@article{mi2024congeo,
+  title={ConGeo: Robust Cross-view Geo-localization across Ground View Variations},
+  author={Mi, Li and Xu, Chang and Castillo-Navarro, Javiera and Montariol, Syrielle and Yang, Wen and Bosselut, Antoine and Tuia, Devis},
+  journal={arXiv preprint arXiv:2403.13965},
+  year={2024}
 }</code></pre>
     </div>
 </section>
